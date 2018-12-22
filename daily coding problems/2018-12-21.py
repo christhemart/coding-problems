@@ -20,6 +20,14 @@ node = Node('root', Node('left', Node('left.left')), Node('right'))
 assert deserialize(serialize(node)).left.left.val == 'left.left'
 """
 
+class Node:
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+node = Node('root', Node('left', Node('left.left')), Node('right'))
+
 # first cheese try, just serialize as python code recursively, 
 # deserialize using eval(), bit of a security issue
 
@@ -33,6 +41,8 @@ def serialize(node):
 
 def deserialize(serial):
     return eval(serial)
+
+assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 # second try without eval(), less text recursive serialize, 
 # deserialize by parsing with a stack
@@ -60,3 +70,5 @@ def deserialize(serial):
         else:
             stack.append(item)
     return stack.pop()
+
+assert deserialize(serialize(node)).left.left.val == 'left.left'

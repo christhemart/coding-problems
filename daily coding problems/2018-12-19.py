@@ -17,3 +17,5 @@ def sum_exists(list, target_sum):
             if list[index1] + list[index2] == target_sum:
                 return True
     return False
+
+print(sum_exists([10,15,3,7], 17))

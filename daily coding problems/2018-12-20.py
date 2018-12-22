@@ -23,6 +23,8 @@ def F(l):
         new_list.append(product/n)
     return new_list
 
+print(F([1,2,3,4,5]))
+
 # without division
 def F(l):
     new_list = []
@@ -33,3 +35,5 @@ def F(l):
                 product *= l[index2]
         new_list.append(product)
     return new_list
+
+print(F([1,2,3,4,5]))

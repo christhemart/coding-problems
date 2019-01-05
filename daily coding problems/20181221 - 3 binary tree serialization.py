@@ -1,4 +1,4 @@
-"""
+'''
 Good morning! Here's your coding interview problem for today.
 
 This problem was asked by Google.
@@ -18,7 +18,7 @@ The following test should pass:
 
 node = Node('root', Node('left', Node('left.left')), Node('right'))
 assert deserialize(serialize(node)).left.left.val == 'left.left'
-"""
+'''
 
 class Node:
     def __init__(self, val, left=None, right=None):
